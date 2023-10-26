@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Web App</title>
+</head>
+<body>
+    <h1>Welcome to Our Restaurant</h1>
+    <div>
+        <h2>Click on a Tile</h2>
+        <div class="tile" id="menuTile">Menu</div>
+        <div class="tile" id="specialsTile">Specials</div>
+        <div class="tile" id="mapTile">Map</div>
+    </div>
+
+    <script>
+        function getRandomCategory() {
+            const categories = ['Lunch', 'Dinner', 'Sushi', 'Appetizers', 'Desserts'];
+            const randomIndex = Math.floor(Math.random() * categories.length);
+            return categories[randomIndex];
+        }
+
+        function navigateToRandomCategory() {
+            const randomCategory = getRandomCategory();
+            window.location.href = 'category.html?category=' + randomCategory;
+        }
+
+        document.getElementById('specialsTile').addEventListener('click', navigateToRandomCategory);
+    </script>
+</body>
+</html>
